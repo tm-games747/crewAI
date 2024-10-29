@@ -1,6 +1,5 @@
 from flask import Flask, send_from_directory, jsonify
 from src.crewai import Agent, Crew, Task
-from praisonai import PraisonAI
 
 app = Flask(__name__)
 
@@ -22,10 +21,6 @@ def run_crew():
     # Define tasks and agents, and configure them
     crew.tasks = [task]
     crew.agents = [agent]
-
-    # Initialize praisonai
-    praisonai = PraisonAI(api_key="your_praisonai_api_key")
-    praisonai.initialize_crew(crew)
 
     # Use the kickoff method of the Crew class
     try:
