@@ -442,3 +442,24 @@ A: You can find various real-life examples in the [CrewAI-examples repository](h
 
 ### Q: How can I contribute to CrewAI?
 A: Contributions are welcome! You can fork the repository, create a new branch for your feature, add your improvement, and send a pull request. Check the Contribution section in the README for more details.
+
+### Running the Web App Locally
+
+To run the web app locally, follow these steps:
+
+1. Navigate to the `webapp` directory:
+```bash
+cd webapp
+```
+
+2. Install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Start the Flask server:
+```bash
+python server.py
+```
+
+4. Open your web browser and go to `http://127.0.0.1:5000` to view the web app.
