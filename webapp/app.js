@@ -41,4 +41,25 @@ document.addEventListener("DOMContentLoaded", function() {
     container.appendChild(description);
     container.appendChild(runButton);
     root.appendChild(container);
+
+    // Add drag-and-drop functionality
+    const taskList = document.createElement("ul");
+    taskList.id = "task-list";
+    container.appendChild(taskList);
+
+    const addTaskButton = document.createElement("button");
+    addTaskButton.textContent = "Add Task";
+    addTaskButton.addEventListener("click", function() {
+        const taskItem = document.createElement("li");
+        taskItem.textContent = "New Task";
+        taskList.appendChild(taskItem);
+    });
+    container.appendChild(addTaskButton);
+
+    new Sortable(taskList, {
+        animation: 150,
+        onEnd: function(evt) {
+            console.log("Task reordered:", evt.oldIndex, "->", evt.newIndex);
+        }
+    });
 });
