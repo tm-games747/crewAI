@@ -463,3 +463,14 @@ python server.py
 ```
 
 4. Open your web browser and go to `http://127.0.0.1:5000` to view the web app.
+
+### Environment Setup Instructions
+
+To set up the environment for the CrewAI framework, follow these steps:
+
+1. Ensure you have Python 3.10 to 3.13 installed, as specified in the `pyproject.toml`.
+2. Install the required dependencies listed in the `pyproject.toml`. You can use a package manager like `pip` to install them.
+3. Set up environment variables if needed, such as `AGENTOPS_API_KEY`, `OPENAI_API_KEY`, and `OPENAI_MODEL_NAME`, as these are used in the code.
+4. Ensure Docker is installed and running if you plan to use code execution with agents, as indicated in `src/crewai/agent.py`.
+5. Optionally, install additional tools and dependencies listed under `[project.optional-dependencies]` in the `pyproject.toml` if you need them for specific functionalities.
+6. Configure the `webapp/server.py` to handle task execution by importing necessary modules from the CrewAI framework and creating instances of `Agent`, `Crew`, and `Task`.
