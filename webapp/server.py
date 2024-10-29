@@ -23,7 +23,10 @@ def run_crew():
     crew.agents = [agent]
 
     # Use the kickoff method of the Crew class
-    result = crew.kickoff()
+    try:
+        result = crew.kickoff()
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
     # Handle the output of the tasks and display results
     return jsonify(result.raw)
