@@ -12,15 +12,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const runButton = document.createElement("button");
     runButton.textContent = "Run Crew";
     runButton.addEventListener("click", function() {
+        // Show loading indicator
+        const loadingIndicator = document.createElement("p");
+        loadingIndicator.textContent = "Running crew, please wait...";
+        container.appendChild(loadingIndicator);
+
         fetch("/run-crew")
             .then(response => response.json())
             .then(data => {
+                // Remove loading indicator
+                container.removeChild(loadingIndicator);
+
                 const result = document.createElement("pre");
                 result.textContent = JSON.stringify(data, null, 2);
                 container.appendChild(result);
             })
             .catch(error => {
-                console.error("Error:", error);
+                // Remove loading indicator
+                container.removeChild(loadingIndicator);
+
+                const errorMessage = document.createElement("p");
+                errorMessage.textContent = "Error: " + error.message;
+                container.appendChild(errorMessage);
             });
     });
 
