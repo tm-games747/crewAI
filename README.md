@@ -474,3 +474,4 @@ To set up the environment for the CrewAI framework, follow these steps:
 4. Ensure Docker is installed and running if you plan to use code execution with agents, as indicated in `src/crewai/agent.py`.
 5. Optionally, install additional tools and dependencies listed under `[project.optional-dependencies]` in the `pyproject.toml` if you need them for specific functionalities.
 6. Configure the `webapp/server.py` to handle task execution by importing necessary modules from the CrewAI framework and creating instances of `Agent`, `Crew`, and `Task`.
+7. Leverage the use of praisonai that will serve as a tool for the AI resident that is in charge of the initialization of the crew. Check [docs.praison.ai](https://docs.praison.ai) to know and brainstorm how we can maximize the use of this agent.
